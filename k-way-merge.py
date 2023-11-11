@@ -75,7 +75,7 @@ def k_way_merge_segments(*segments_paths):
   while heap:
       key, segment_index, value = heapq.heappop(heap)
       print(f"popped key {key}, segment_file {segments_paths_list[segment_index]}")
-      if previous_key == key:
+      if previous_key == key: # if previously added skip
         continue
       result.append((key, value))
       previous_key = key
